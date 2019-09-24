@@ -1,6 +1,6 @@
 # @typeservice/tcc
 
-[![codecov](https://codecov.io/gh/typeservice/koa/branch/master/graph/badge.svg)](https://codecov.io/gh/typeservice/koa)
+[![codecov](https://codecov.io/gh/typeservice/tcc/branch/master/graph/badge.svg)](https://codecov.io/gh/typeservice/tcc)
 
 TCC (Try-Ack-Cancel) is called a two-stage compensation transaction. The first phase attempts to reserve resources. The second phase must clearly tell the service provider whether this resource is needed or not. Cancel, used to clear the impact of the first phase, so called compensation transactions.
 

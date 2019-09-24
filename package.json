@@ -12,7 +12,7 @@
     "build": "rm -rf dist/ && tsc -d",
     "test": "jest --detectOpenHandles",
     "test:coverage": "rm -rf coverage/ && nyc jest --detectOpenHandles --forceExit --coverage",
-    "test:report": "nyc report --reporter=text-lcov > coverage.lcov && codecov --token=61ef5e63-c46d-4a06-900f-016bf023fd84"
+    "test:report": "nyc report --reporter=text-lcov > coverage.lcov && codecov --token=69a21ada-2ac8-4420-b181-05529f414cf9"
   },
   "keywords": [
     "typeservice",
