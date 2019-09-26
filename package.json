@@ -1,6 +1,6 @@
 {
   "name": "@typeservice/tcc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Distributed transaction TCC transaction model",
   "main": "dist/index.js",
   "repository": {
