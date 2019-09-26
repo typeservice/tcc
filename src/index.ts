@@ -1,4 +1,3 @@
-import * as Koa from 'koa';
 import { EventEmitter } from '@typeservice/core';
 
 export type Context = {
@@ -20,8 +19,8 @@ class Tcc extends EventEmitter {
   }
 }
 
-export function Middleware() {
-  return async (ctx: Context & Koa.Context, next: Function) => {
+export function Middleware<T = {}>() {
+  return async (ctx: Context & T, next: Function) => {
     let done = false;
     const tcc = new Tcc();
     Object.defineProperty(ctx, 'tcc', { value: tcc });
