@@ -21,6 +21,7 @@ app.use(async (ctx, next) => {
     ctx.tcc.on('commit', async () => {});
     ctx.body = 'ok';
   }
+  await next();
 })
 app.httpBootstrap();
 

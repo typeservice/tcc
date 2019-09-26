@@ -21,16 +21,18 @@ app.use(Tcc.Middleware());
 
 It has 4 events:
 
+- `start` 开始事件
 - `commit` 成功提交事件
 - `rollback` 回滚事件
 - `error` 出错事件
-- `end` 结束事件
+- `stop` 结束事件
 
 ```ts
+ctx.tcc.on('start', async () => {});
 ctx.tcc.on('commit', async () => {});
 ctx.tcc.on('rollback', async () => {});
 ctx.tcc.on('error', async (e: Error) => {});
-ctx.tcc.on('end', async () => {});
+ctx.tcc.on('stop', async () => {});
 ```
 
 # License

@@ -25,6 +25,7 @@ export function Middleware<T = {}>() {
     const tcc = new Tcc();
     Object.defineProperty(ctx, 'tcc', { value: tcc });
     try {
+      await ctx.tcc.sync('start');
       await next();
       done = true;
       await ctx.tcc.commit();
@@ -34,7 +35,7 @@ export function Middleware<T = {}>() {
       }
       await ctx.tcc.sync('error', e);
     } finally {
-      await ctx.tcc.sync('end');
+      await ctx.tcc.sync('stop');
     }
   }
 }
