@@ -33,7 +33,12 @@ export function Middleware<T = {}>() {
       if (!done) {
         await ctx.tcc.rollback();
       }
-      await ctx.tcc.sync('error', e);
+      /* istanbul ignore next */
+      if (ctx.tcc.listenerCount('error') > 0) {
+        await ctx.tcc.sync('error', e);
+      } else {
+        throw e;
+      }
     } finally {
       await ctx.tcc.sync('stop');
     }
